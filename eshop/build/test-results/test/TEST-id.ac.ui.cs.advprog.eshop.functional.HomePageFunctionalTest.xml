@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="id.ac.ui.cs.advprog.eshop.functional.HomePageFunctionalTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-02-14T12:53:44" hostname="ZENBOOK-RAMY" time="2.466">
+  <properties/>
+  <testcase name="pageTitle_isCorrect(ChromeDriver)" classname="id.ac.ui.cs.advprog.eshop.functional.HomePageFunctionalTest" time="1.214"/>
+  <testcase name="welcomeMessage_homepage_isCorrect(ChromeDriver)" classname="id.ac.ui.cs.advprog.eshop.functional.HomePageFunctionalTest" time="1.25"/>
+  <system-out><![CDATA[2025-02-14T19:53:44.966+07:00  INFO 23940 --- [eshop] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [id.ac.ui.cs.advprog.eshop.functional.HomePageFunctionalTest]: HomePageFunctionalTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14T19:53:44.968+07:00  INFO 23940 --- [eshop] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration id.ac.ui.cs.advprog.eshop.EshopApplication for test class id.ac.ui.cs.advprog.eshop.functional.HomePageFunctionalTest
+2025-02-14T19:53:44.994+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 132.0.6834.159 (resolved driver for Chrome 132)
+2025-02-14T19:53:45.003+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Ramy\.cache\selenium\chromedriver\win64\132.0.6834.159\chromedriver.exe
+2025-02-14T19:53:45.693+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 132
+2025-02-14T19:53:45.694+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 132.0.6834.196. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-02-14T19:53:46.208+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 132.0.6834.159 (resolved driver for Chrome 132)
+2025-02-14T19:53:46.214+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Ramy\.cache\selenium\chromedriver\win64\132.0.6834.159\chromedriver.exe
+2025-02-14T19:53:46.916+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 132
+2025-02-14T19:53:46.916+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 132.0.6834.196. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

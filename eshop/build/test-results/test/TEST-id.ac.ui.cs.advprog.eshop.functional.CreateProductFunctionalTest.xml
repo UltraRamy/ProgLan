@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="id.ac.ui.cs.advprog.eshop.functional.CreateProductFunctionalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-14T12:53:02" hostname="ZENBOOK-RAMY" time="42.087">
+  <properties/>
+  <testcase name="user_can_create_product(ChromeDriver)" classname="id.ac.ui.cs.advprog.eshop.functional.CreateProductFunctionalTest" time="42.087"/>
+  <system-out><![CDATA[2025-02-14T19:53:02.085+07:00  INFO 23940 --- [eshop] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [id.ac.ui.cs.advprog.eshop.functional.CreateProductFunctionalTest]: CreateProductFunctionalTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14T19:53:02.095+07:00  INFO 23940 --- [eshop] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration id.ac.ui.cs.advprog.eshop.EshopApplication for test class id.ac.ui.cs.advprog.eshop.functional.CreateProductFunctionalTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.2)
+
+2025-02-14T19:53:02.128+07:00  INFO 23940 --- [eshop] [    Test worker] .a.u.c.a.e.f.CreateProductFunctionalTest : Starting CreateProductFunctionalTest using Java 21.0.2 with PID 23940 (started by Ramy in C:\Users\Ramy\Documents\ProgLan\eshop)
+2025-02-14T19:53:02.129+07:00  INFO 23940 --- [eshop] [    Test worker] .a.u.c.a.e.f.CreateProductFunctionalTest : No active profile set, falling back to 1 default profile: "default"
+2025-02-14T19:53:02.392+07:00  INFO 23940 --- [eshop] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-02-14T19:53:02.408+07:00  INFO 23940 --- [eshop] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-14T19:53:02.408+07:00  INFO 23940 --- [eshop] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-14T19:53:02.473+07:00  INFO 23940 --- [eshop] [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-14T19:53:02.476+07:00  INFO 23940 --- [eshop] [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 345 ms
+2025-02-14T19:53:02.864+07:00  INFO 23940 --- [eshop] [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 37942 (http) with context path '/'
+2025-02-14T19:53:02.868+07:00  INFO 23940 --- [eshop] [    Test worker] .a.u.c.a.e.f.CreateProductFunctionalTest : Started CreateProductFunctionalTest in 0.768 seconds (process running for 4.327)
+2025-02-14T19:53:03.042+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 132.0.6834.159 (resolved driver for Chrome 132)
+2025-02-14T19:53:03.080+07:00  INFO 23940 --- [eshop] [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Ramy\.cache\selenium\chromedriver\win64\132.0.6834.159\chromedriver.exe
+2025-02-14T19:53:03.984+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 132
+2025-02-14T19:53:03.985+07:00  WARN 23940 --- [eshop] [    Test worker] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 132.0.6834.196. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.25.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2025-02-14T19:53:04.077+07:00  INFO 23940 --- [eshop] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-14T19:53:04.077+07:00  INFO 23940 --- [eshop] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-14T19:53:04.079+07:00  INFO 23940 --- [eshop] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
