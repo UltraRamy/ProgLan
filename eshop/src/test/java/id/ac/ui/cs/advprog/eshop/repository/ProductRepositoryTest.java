@@ -63,4 +63,55 @@ public class ProductRepositoryTest {
         assertEquals(product2.getProductId(), savedProduct.getProductId());
         assertFalse(productIterator.hasNext());
     }
+
+    @Test
+    void testUpdateProduct_Success() {
+        Product product = new Product();
+        product.setProductId("20");
+        product.setProductName("Tablet");
+        product.setProductQuantity(15);
+        productRepository.create(product);
+
+        Product updatedProduct = new Product();
+        updatedProduct.setProductId("20");
+        updatedProduct.setProductName("Updated Tablet");
+        updatedProduct.setProductQuantity(20);
+        productRepository.update(updatedProduct);
+
+        Product foundProduct = productRepository.findById("20");
+        assertNotNull(foundProduct);
+        assertEquals("Updated Tablet", foundProduct.getProductName());
+        assertEquals(20, foundProduct.getProductQuantity());
+    }
+
+    @Test
+    void testUpdateProduct_Failure_ProductNotFound() {
+        Product updatedProduct = new Product();
+        updatedProduct.setProductId("40");
+        updatedProduct.setProductName("Non-existent");
+        updatedProduct.setProductQuantity(10);
+
+        Product result = productRepository.update(updatedProduct);
+        assertNull(result);  // Update should return null as the product does not exist
+    }
+
+    @Test
+    void testDeleteProduct_Success() {
+        Product product = new Product();
+        product.setProductId("30");
+        product.setProductName("Headphones");
+        product.setProductQuantity(8);
+        productRepository.create(product);
+
+        boolean isDeleted = productRepository.deleteById("30");
+        assertTrue(isDeleted);  // Deletion should be successful
+        assertNull(productRepository.findById("30"));  // Product should be deleted
+    }
+
+    @Test
+    void testDeleteProduct_Failure_ProductNotFound() {
+        boolean isDeleted = productRepository.deleteById("40");  // No product with ID "40"
+        assertFalse(isDeleted);  // Deletion should fail
+        assertNull(productRepository.findById("40"));  // Still should not exist
+    }
 }

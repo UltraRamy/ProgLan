@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-02-14T12:01:58" hostname="ZENBOOK-RAMY" time="0.057">
+<testsuite name="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-02-14T12:34:35" hostname="ZENBOOK-RAMY" time="0.07">
   <properties/>
   <testcase name="testCreateAndFind()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.043"/>
-  <testcase name="testFindAllIfEmpty()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.007"/>
-  <testcase name="testFindAllIfMoreThanOneProduct()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.004"/>
+  <testcase name="testUpdateProduct_Success()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.005"/>
+  <testcase name="testFindAllIfEmpty()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.004"/>
+  <testcase name="testFindAllIfMoreThanOneProduct()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.003"/>
+  <testcase name="testDeleteProduct_Failure_ProductNotFound()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.004"/>
+  <testcase name="testUpdateProduct_Failure_ProductNotFound()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.003"/>
+  <testcase name="testDeleteProduct_Success()" classname="id.ac.ui.cs.advprog.eshop.repository.ProductRepositoryTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
