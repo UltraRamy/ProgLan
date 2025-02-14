@@ -24,7 +24,7 @@ public class ProductTest {
     void testGetProductName() {
         assertEquals("Sampo cap Bambang", this.product.getProductName());
     }
-    
+
     @Test
     void testGetProductQuantity() {
         assertEquals(100, this.product.getProductQuantity());
