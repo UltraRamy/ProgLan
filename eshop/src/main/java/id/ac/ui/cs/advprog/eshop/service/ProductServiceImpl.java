@@ -38,4 +38,14 @@ public class ProductServiceImpl implements ProductService {
             throw new IllegalArgumentException("Product with ID " + id + " not found");
         }
     }
+
+    @Override
+    public Product findById(String id) {
+        return productRepository.findById(id);
+    }
+
+    @Override
+    public Product update(Product product) {
+        return productRepository.update(product);
+    }
 }

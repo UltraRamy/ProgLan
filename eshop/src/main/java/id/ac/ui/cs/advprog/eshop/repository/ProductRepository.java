@@ -37,11 +37,21 @@ public class ProductRepository {
         return false;
     }
 
-    // Optional: Find a product by ID (for later use, e.g., updating)
-    public Optional<Product> findById(String id) {
+    public Product findById(String id) {
         return productData.stream()
-                .filter(product -> product.getProductId().equals(id))  // Compare the productId (String)
-                .findFirst();
+                .filter(product -> product.getProductId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Product update(Product updatedProduct) {
+        for (int i = 0; i < productData.size(); i++) {
+            if (productData.get(i).getProductId().equals(updatedProduct.getProductId())) {
+                productData.set(i, updatedProduct);
+                return updatedProduct;
+            }
+        }
+        return null;
     }
 
 }
