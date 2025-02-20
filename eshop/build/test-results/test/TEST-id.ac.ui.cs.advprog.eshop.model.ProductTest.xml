@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="id.ac.ui.cs.advprog.eshop.model.ProductTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-02-14T12:53:47" hostname="ZENBOOK-RAMY" time="0.005">
-  <properties/>
-  <testcase name="testGetProductId()" classname="id.ac.ui.cs.advprog.eshop.model.ProductTest" time="0.002"/>
-  <testcase name="testGetProductName()" classname="id.ac.ui.cs.advprog.eshop.model.ProductTest" time="0.002"/>
-  <testcase name="testGetProductQuantity()" classname="id.ac.ui.cs.advprog.eshop.model.ProductTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
