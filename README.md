@@ -20,7 +20,7 @@ I've used several clean code principles in implementing my edit and delete featu
 
 1. I applied SRP, OCP, LSP, ISP, and DIP. For SRP, I seperated a base service interface into two interfaces, one is for write and the other one is for read. For OCP, I made a BaseService so that any new entity with similar behavior to product or car can extend it easily. For LSP, I made sure that every function in the interface if implemented in the Impl file. For ISP, I seperated the extended the base service to Car and Product. For DIP, I made sure that my code relies on abstractions such as interfaces.
 
-2. Implementing SOLID principle makes my code more sustainable and readable. I can figure out what file do what easily. It is also more structued. The biggest effect I felt is it is way easier to progress now. With the base service, I can extend classes with similar behavior easily.
+2. Implementing SOLID principle makes my code more maintainable and readable. I can figure out what file do what easily. It is also more structued. The biggest effect I felt is it is way easier to progress now. With the base service, I can extend classes with similar behavior easily.
 
-3. It makes the code less readable. It also makes the code hard to sustain. Files are also harder to locate. It is also harder to progress. For example, I might need to do some redundant coding to make a service without base service.
+3. It makes the code less readable. It also makes the code hard to maintain. Files are also harder to locate. It is also harder to progress. For example, I might need to do some redundant coding to make a service without base service.
  
