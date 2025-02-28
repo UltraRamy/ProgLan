@@ -54,7 +54,7 @@ public class ProductController {
 
     @PostMapping("/edit")
     public String editProductPost(@ModelAttribute Product product) {
-        service.update(product);
+        service.update("a", product);
         return "redirect:/product/list";
     }
 }
@@ -100,7 +100,7 @@ class CarController extends ProductController {
 
     @PostMapping("/deleteCar")
     public String deleteCar(@RequestParam("carId") String carId) {
-        carService.deleteCarById(carId);
+        carService.delete(carId);
         return "redirect:listCar";
     }
 
