@@ -1,19 +1,7 @@
 package id.ac.ui.cs.advprog.eshop.service;
 
 import id.ac.ui.cs.advprog.eshop.model.Car;
+import id.ac.ui.cs.advprog.eshop.service.base.ReadService;
+import id.ac.ui.cs.advprog.eshop.service.base.WriteService;
 
-import java.util.List;
-
-public interface CarService {
-
-    public Car create(Car car);
-
-    public List<Car> findAll();
-
-    Car findById(String carId);
-
-    public void update(String carId, Car car);
-
-    public void deleteCarById(String id);
-
-}
+public interface CarService extends ReadService<Car, String>, WriteService<Car, String> { }

@@ -44,7 +44,7 @@ public class ProductRepository {
                 .orElse(null);
     }
 
-    public Product update(Product updatedProduct) {
+    public Product update(String id, Product updatedProduct) {
         for (Product product : productData) {
             if (Objects.equals(product.getProductId(), updatedProduct.getProductId())) {
                 productData.set(productData.indexOf(product), updatedProduct);
