@@ -81,7 +81,7 @@ class PaymentRepositoryTest {
 
         Payment updatedPayment = paymentRepository.getPayment(payment.getId());
         assertEquals(PaymentStatus.REJECTED.getValue(), updatedPayment.getStatus());
-        
+
     }
 
     @Test

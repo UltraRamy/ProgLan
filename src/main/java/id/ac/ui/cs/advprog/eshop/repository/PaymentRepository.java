@@ -20,17 +20,16 @@ public class PaymentRepository {
         return payment;
     }
 
-    // Set the status of a Payment and update the corresponding Order status if needed
+
     public Payment setStatus(Payment payment, String status) {
         payment.setStatus(status);  // Set status for Payment
 
-        // If Payment status is "SUCCESS", update the related Order status to "SUCCESS"
-        if (status.equals("PAID")) {
+        if (status.equals("SUCCESS")) {
             Order order = payment.getOrder();  // Get related Order from Payment
             order.setStatus("SUCCESS");  // Update Order status to "SUCCESS"
         }
         // If Payment status is "REJECTED", update the related Order status to "FAILED"
-        else if (status.equals("FAILED")) {
+        else if (status.equals("REJECTED")) {
             Order order = payment.getOrder();  // Get related Order from Payment
             order.setStatus("FAILED");  // Update Order status to "FAILED"
         }
