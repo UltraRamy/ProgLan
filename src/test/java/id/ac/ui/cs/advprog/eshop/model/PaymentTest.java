@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.eshop.model;
 
+import id.ac.ui.cs.advprog.eshop.enums.PaymentStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,6 @@ class PaymentTest {
 
     @BeforeEach
     void setUp() {
-
         paymentData = new HashMap<>();
         paymentData.put("transactionId", "txn123");
         paymentData.put("amount", "5000");
@@ -37,7 +37,7 @@ class PaymentTest {
     @Test
     void testSetStatusToPaid() {
         payment.setStatus("PAID");
-        assertEquals("PAID", payment.getStatus());
+        assertEquals(PaymentStatus.PAID.getValue(), payment.getStatus());
     }
 
     @Test
@@ -54,9 +54,17 @@ class PaymentTest {
     }
 
     @Test
+    void testSetInvalidStatusEnum() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            payment.setStatus("INVALID_STATUS");
+        });
+    }
+
+    @Test
     void testCreatePaymentWithoutStatus() {
-        Payment paymentWithoutStatus = new Payment("pay124", "Bank Transfer", null, paymentData);
-        assertNull(paymentWithoutStatus.getStatus());
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Payment("pay124", "Bank Transfer", null, paymentData);
+        });
     }
 
     @Test
