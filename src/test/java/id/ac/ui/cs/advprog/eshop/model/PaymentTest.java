@@ -1,81 +1,63 @@
 package id.ac.ui.cs.advprog.eshop.model;
 
-import id.ac.ui.cs.advprog.eshop.enums.PaymentStatus;
-import id.ac.ui.cs.advprog.eshop.repository.PaymentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 class PaymentTest {
-    private PaymentRepository paymentRepository;
+
     private Order order;
     private Map<String, String> cashOnDelivery;
 
     @BeforeEach
     void setUp() {
-        paymentRepository = mock(PaymentRepository.class);
-        cashOnDelivery = new HashMap<>();
-        cashOnDelivery.put("address", "123 Main St");
-        cashOnDelivery.put("deliveryFee", "5000");
+        // Setting up a mock order object
+        this.order = new Order("13652556-012a-4c07-b546-54eb1396d79b",
+                new ArrayList<>(), 1708560000L, "Safira Sudrajat");
 
-        order = mock(Order.class);
-        when(order.getId()).thenReturn("13652556-012a-4c07-b546-54eb1396d79b");
-        when(order.getStatus()).thenReturn("WAITING_PAYMENT");
+        // Setting up a mock cashOnDelivery map
+        this.cashOnDelivery = new HashMap<>();
+        this.cashOnDelivery.put("amount", "1000000");
+        this.cashOnDelivery.put("currency", "IDR");
     }
 
     @Test
-    void testCreatePayment() {
-        Payment payment = new Payment("payment123", "CASH_ON_DELIVERY", cashOnDelivery, order);
-
-        assertEquals("payment123", payment.getId());
-        assertEquals("CASH_ON_DELIVERY", payment.getMethod());
-        assertEquals(cashOnDelivery, payment.getPaymentData());
-        assertEquals("WAITING_PAYMENT", order.getStatus());
-        assertEquals(PaymentStatus.PENDING.getValue(), payment.getStatus());
+    void testCreatePaymentSuccess() {
+        Payment payment = new Payment("1", "CREDIT_CARD", "PENDING", this.cashOnDelivery, this.order);
+        assertEquals("1", payment.getId());
+        assertEquals("CREDIT_CARD", payment.getMethod());
+        assertEquals("PENDING", payment.getStatus());
+        assertSame(this.cashOnDelivery, payment.getCashOnDelivery());
+        assertSame(this.order, payment.getOrder());
     }
 
     @Test
-    void testSetStatusToSuccess() {
-        Payment payment = new Payment("payment123", "CASH_ON_DELIVERY", cashOnDelivery, order);
-        payment.setStatus(PaymentStatus.SUCCESS.getValue());
-
-        assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
-        verify(order).setStatus("SUCCESS");
+    void testCreatePaymentWithEmptyStatus() {
+        Payment payment = new Payment("1", "CREDIT_CARD", "", this.cashOnDelivery, this.order);
+        assertEquals("", payment.getStatus());
     }
 
     @Test
-    void testSetStatusToRejected() {
-        Payment payment = new Payment("payment123", "BANK_TRANSFER", cashOnDelivery, order);
-        payment.setStatus(PaymentStatus.REJECTED.getValue());
-
-        assertEquals(PaymentStatus.REJECTED.getValue(), payment.getStatus());
-        verify(order).setStatus("FAILED");
+    void testSetStatusToPaid() {
+        Payment payment = new Payment("1", "CREDIT_CARD", "PENDING", this.cashOnDelivery, this.order);
+        payment.setStatus("PAID");
+        assertEquals("PAID", payment.getStatus());
     }
 
     @Test
     void testSetStatusToInvalidStatus() {
-        Payment payment = new Payment("payment123", "CASH_ON_DELIVERY", cashOnDelivery, order);
-        assertThrows(IllegalArgumentException.class, () -> payment.setStatus("INVALID"));
+        Payment payment = new Payment("1", "CREDIT_CARD", "PENDING", this.cashOnDelivery, this.order);
+        assertThrows(IllegalArgumentException.class, () -> payment.setStatus("INVALID_STATUS"));
     }
 
     @Test
-    void testGetPaymentById() {
-        Payment payment = new Payment("payment123", "CASH_ON_DELIVERY", cashOnDelivery, order);
-        when(paymentRepository.getPayment("payment123")).thenReturn(payment);
-
-        Payment retrievedPayment = paymentRepository.getPayment("payment123");
-        assertNotNull(retrievedPayment);
-        assertEquals("payment123", retrievedPayment.getId());
-    }
-
-    @Test
-    void testGetAllPayments() {
-        when(paymentRepository.getAllPayments()).thenReturn(new HashMap<>());
-        assertNotNull(paymentRepository.getAllPayments());
+    void testCreatePaymentWithoutStatus() {
+        Payment payment = new Payment("1", "CREDIT_CARD", this.cashOnDelivery, this.order);
+        assertNull(payment.getStatus()); // Ensure status is null by default
     }
 }
