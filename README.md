@@ -23,4 +23,10 @@ I've used several clean code principles in implementing my edit and delete featu
 2. Implementing SOLID principle makes my code more maintainable and readable. I can figure out what file do what easily. It is also more structued. The biggest effect I felt is it is way easier to progress now. With the base service, I can extend classes with similar behavior easily.
 
 3. It makes the code less readable. It also makes the code hard to maintain. Files are also harder to locate. It is also harder to progress. For example, I might need to do some redundant coding to make a service without base service.
- 
+
+# Week 4
+
+1. TDD flow is useful for me. I do think it takes a little longer than making it normally. It is also really hard since we are making the tests first. Usually, I make the code first and then the test. But, I think I can think about my program more holistically. So, I think overall it is useful.
+   
+2. I have made a lot of unit tests in this tutorial. I think my unit test already cover happy and unhappy paths, although I think there might be holes here and there. My tests are also repeatable. Some of my assertions are loose, I might need to work on my error throwing and edge cases like null next time. I think my unit test is not the Fastest because there are some repeated tests of a feature/function. But, I try to keep it as few as I can. Next time, I will try to brainstorm harder in the early stages so that I do not have to add another test for the same function midway and therefore making my unit test more compact.
+   
