@@ -1,3 +1,6 @@
+Link: https://just-ilysa-ultramy-539d170c.koyeb.app/
+
+<details>
 # Week 1
 
 ## Reflection 1
@@ -29,4 +32,4 @@ I've used several clean code principles in implementing my edit and delete featu
 1. TDD flow is useful for me. I do think it takes a little longer than making it normally. It is also really hard since we are making the tests first. Usually, I make the code first and then the test. But, I think I can think about my program more holistically. So, I think overall it is useful.
    
 2. I have made a lot of unit tests in this tutorial. I think my unit test already cover happy and unhappy paths, although I think there might be holes here and there. My tests are also repeatable. Some of my assertions are loose, I might need to work on my error throwing and edge cases like null next time. I think my unit test is not the Fastest because there are some repeated tests of a feature/function. But, I try to keep it as few as I can. Next time, I will try to brainstorm harder in the early stages so that I do not have to add another test for the same function midway and therefore making my unit test more compact.
-   
+</details>
