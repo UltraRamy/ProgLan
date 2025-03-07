@@ -129,6 +129,6 @@ public class ProductPageControllerTest {
 
         // Assert
         assertEquals("redirect:/product/list", viewName);
-        verify(productService).update(product);
+        verify(productService).update("",product);
     }
 }

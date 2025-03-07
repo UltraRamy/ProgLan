@@ -154,7 +154,7 @@ public class ProductRepositoryTest {
         updatedProduct.setProductQuantity(20);
 
         // Act
-        Product result = productRepository.update(updatedProduct);
+        Product result = productRepository.update("",updatedProduct);
 
         // Assert
         assertNotNull(result);
@@ -177,7 +177,7 @@ public class ProductRepositoryTest {
         updatedProduct.setProductQuantity(10);
 
         // Act
-        Product result = productRepository.update(updatedProduct);
+        Product result = productRepository.update("", updatedProduct);
 
         // Assert
         assertNull(result);
@@ -209,7 +209,7 @@ public class ProductRepositoryTest {
         updatedProduct2.setProductName("Wireless Mouse");
         updatedProduct2.setProductQuantity(8);
 
-        productRepository.update(updatedProduct2);
+        productRepository.update("",updatedProduct2);
 
         // Check the updated product2
         Product foundProduct2 = productRepository.findById("002");

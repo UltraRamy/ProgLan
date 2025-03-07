@@ -138,17 +138,17 @@ public class ProductServiceImplTest {
         product.setProductName("Updated Product");
         product.setProductQuantity(20);
 
-        when(productRepository.update(product)).thenReturn(product);
+        when(productRepository.update("",product)).thenReturn(product);
 
         // Act
-        Product updatedProduct = productService.update(product);
+        Product updatedProduct = productService.update("",product);
 
         // Assert
         assertNotNull(updatedProduct);
         assertEquals("1", updatedProduct.getProductId());
         assertEquals("Updated Product", updatedProduct.getProductName());
         assertEquals(20, updatedProduct.getProductQuantity());
-        verify(productRepository).update(product);
+        verify(productRepository).update("",product);
     }
 
     @Test
@@ -159,13 +159,13 @@ public class ProductServiceImplTest {
         product.setProductName("Non-existent Product");
         product.setProductQuantity(10);
 
-        when(productRepository.update(product)).thenReturn(null);
+        when(productRepository.update("",product)).thenReturn(null);
 
         // Act
-        Product result = productService.update(product);
+        Product result = productService.update("",product);
 
         // Assert
         assertNull(result);
-        verify(productRepository).update(product);
+        verify(productRepository).update("",product);
     }
 }
