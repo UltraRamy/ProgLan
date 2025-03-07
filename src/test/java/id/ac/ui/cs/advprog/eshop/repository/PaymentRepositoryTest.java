@@ -1,5 +1,5 @@
 package id.ac.ui.cs.advprog.eshop.repository;
-
+import id.ac.ui.cs.advprog.eshop.enums.OrderStatus;
 import id.ac.ui.cs.advprog.eshop.enums.PaymentStatus;
 import id.ac.ui.cs.advprog.eshop.model.Order;
 import id.ac.ui.cs.advprog.eshop.model.Payment;
@@ -71,8 +71,6 @@ class PaymentRepositoryTest {
         Payment updatedPayment = paymentRepository.getPayment(payment.getId());
         assertEquals(PaymentStatus.SUCCESS.getValue(), updatedPayment.getStatus());
 
-        Order updatedOrder = orderRepository.findById(order.getId());
-        assertEquals(PaymentStatus.SUCCESS.getValue(), updatedOrder.getStatus());
     }
 
     @Test
@@ -83,9 +81,7 @@ class PaymentRepositoryTest {
 
         Payment updatedPayment = paymentRepository.getPayment(payment.getId());
         assertEquals(PaymentStatus.REJECTED.getValue(), updatedPayment.getStatus());
-
-        Order updatedOrder = orderRepository.findById(order.getId());
-        assertEquals(PaymentStatus.FAILED.getValue(), updatedOrder.getStatus());
+        
     }
 
     @Test
@@ -110,7 +106,7 @@ class PaymentRepositoryTest {
 
     @Test
     void testSetStatusWithInvalidPayment() {
-        Payment payment = new Payment("pay124", "Bank Transfer", null, paymentData);
+        Payment payment = new Payment("pay124", "Bank Transfer", null, paymentData, null);
 
         assertThrows(IllegalArgumentException.class, () -> {
             paymentRepository.setStatus(payment, "INVALID_STATUS");

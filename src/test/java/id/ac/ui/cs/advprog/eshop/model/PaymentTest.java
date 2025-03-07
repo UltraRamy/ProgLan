@@ -20,7 +20,8 @@ class PaymentTest {
         paymentData.put("amount", "5000");
         paymentData.put("currency", "USD");
 
-        payment = new Payment("pay123", "Credit Card", "PENDING", paymentData);
+        payment = new Payment("pay123", "Credit Card", PaymentStatus.PENDING.getValue(), paymentData, null);
+
     }
 
     @Test
@@ -36,8 +37,8 @@ class PaymentTest {
 
     @Test
     void testSetStatusToPaid() {
-        payment.setStatus("PAID");
-        assertEquals(PaymentStatus.PAID.getValue(), payment.getStatus());
+        payment.setStatus("SUCCESS");
+        assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
     }
 
     @Test
@@ -63,7 +64,7 @@ class PaymentTest {
     @Test
     void testCreatePaymentWithoutStatus() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new Payment("pay124", "Bank Transfer", null, paymentData);
+            new Payment("pay124", "Bank Transfer", null, paymentData, null);
         });
     }
 

@@ -14,16 +14,18 @@ public class Payment {
     @Setter
     private String status;
     private Map<String, String> paymentData;
+    private Order order;  // Add the Order object to represent the related order
 
-    public Payment(String id, String method, String status, Map<String, String> paymentData) {
+    public Payment(String id, String method, String status, Map<String, String> paymentData, Order order) {
         this.id = id;
         this.method = method;
         this.paymentData = paymentData;
-        setStatus(status);
+        this.order = order; // Set the related order
+        this.status = PaymentStatus.PENDING.getValue();
     }
 
-    public Payment(String id, String method, Map<String, String> paymentData) {
-        this(id, method, null, paymentData);
+    public Payment(String id, String method, Map<String, String> paymentData, Order order) {
+        this(id, method, null, paymentData, order);
     }
 
     public void setStatus(String status) {
@@ -33,4 +35,5 @@ public class Payment {
             throw new IllegalArgumentException("Invalid payment status.");
         }
     }
+
 }
